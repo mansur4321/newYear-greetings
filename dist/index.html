@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
+	<title>Новий ГОД!!!</title>
+</head>
+<body>
+	<div id="app">
+		<div class="wrapper">
+			<h1 class="newyear-title">Сыграй в игру "Найди пары"</h1>
+
+			<div class="border-GRADIENT">
+				<div class="game-block">
+					<div
+					v-for="userM of usersMaping"
+					class="cart">
+						<div 
+						@click="openCard($event.target, userM)"
+						class="cart__img">
+							<img src="img/vopros-removebg-preview.png" class="cart__img-front">
+
+							<img 
+							:src="searchURL(userM)"
+							class="cart__img-back">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+
+		<div class="wrapper-pozdravlenie">
+			<div class="pozdravlenie">
+				<div class="pozdravlenie__text">
+					{{nameThisUser}}!<br>
+					Желаю счастья, здоровья в 22 году и<br>
+					чтобы все твои желания сбылись! <br>
+					ИУУИУИУИУИУИУ
+				</div>
+			</div>		
+		</div>
+	</div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
